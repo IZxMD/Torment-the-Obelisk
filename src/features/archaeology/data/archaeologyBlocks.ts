@@ -1,0 +1,55 @@
+import type { ArchaeologyBlockStat } from '../types';
+
+const source = {
+  page: 'Archaeology',
+  section: 'Block Stats',
+  revisionTimestamp: '2026-04-22T04:19:29Z',
+};
+
+export const archaeologyBlocks: ArchaeologyBlockStat[] = [
+  {
+    id: 'dirt-1',
+    rarity: 'dirt',
+    tier: 1,
+    tierWave: 1,
+    hp: 100,
+    armor: null,
+    xp: 0.05,
+    fragments: null,
+    hp100: 200,
+    armor100: null,
+    hp150: 400,
+    armor150: null,
+    source,
+  },
+  {
+    id: 'common-1',
+    rarity: 'common',
+    tier: 1,
+    tierWave: 1,
+    hp: 250,
+    armor: 5,
+    xp: 0.15,
+    fragments: 0.01,
+    hp100: 500,
+    armor100: 7.5,
+    hp150: 1000,
+    armor150: 7.5,
+    source,
+  },
+  {
+    id: 'rare-1',
+    rarity: 'rare',
+    tier: 1,
+    tierWave: 3,
+    hp: 550,
+    armor: 12,
+    xp: 0.35,
+    fragments: 0.01,
+    hp100: 1100,
+    armor100: 18,
+    hp150: 2200,
+    armor150: 18,
+    source,
+  },
+];
