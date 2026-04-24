@@ -18,6 +18,22 @@ export interface ArchaeologySkill {
   source: WikiSource;
 }
 
+export interface ArchaeologyAbility {
+  id: string;
+  name: string;
+  baseCharges: number;
+  baseCooldownSeconds: number;
+  effect: string;
+  source: WikiSource;
+}
+
+export interface ArchaeologyAscensionRequirement {
+  ascension: 1 | 2;
+  requiredArchaeologyLevel: number;
+  requiredHighestStage: number;
+  source: WikiSource;
+}
+
 export interface ArchaeologyBlockStat {
   id: string;
   rarity: BlockRarity;
@@ -31,6 +47,15 @@ export interface ArchaeologyBlockStat {
   armor100: number | null;
   hp150: number;
   armor150: number | null;
+  source: WikiSource;
+}
+
+export interface ArchaeologySpawnChance {
+  id: string;
+  displayLabel: string;
+  stageMin: number;
+  stageMax: number | null;
+  chances: Partial<Record<BlockRarity, number>>;
   source: WikiSource;
 }
 
