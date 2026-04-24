@@ -47,4 +47,20 @@ export const archaeologySkills: ArchaeologySkill[] = [
     baseCap: 25,
     source: archaeologySource,
   },
+  {
+    id: 'divinity',
+    name: 'Divinity',
+    effects: ['Flat Damage +2', 'Super Crit Chance +2%', 'Crosshair Auto-Tap +2%'],
+    requirement: 'Ascension 1',
+    baseCap: 10,
+    source: archaeologySource,
+  },
+  {
+    id: 'corruption',
+    name: 'Corruption',
+    effects: ['Damage +6%', 'Max Stamina -3%', 'All Mod Multis +1%'],
+    requirement: 'Ascension 2',
+    baseCap: 10,
+    source: archaeologySource,
+  },
 ];
