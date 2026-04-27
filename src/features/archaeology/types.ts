@@ -2,6 +2,8 @@ export type FragmentRarity = 'common' | 'rare' | 'epic' | 'legendary' | 'mythic'
 
 export type BlockRarity = 'dirt' | FragmentRarity;
 
+export type ArchaeologyUpgradeCostCategory = 'gems' | FragmentRarity | 'mixed';
+
 export interface WikiSource {
   page: string;
   section: string;
@@ -31,6 +33,18 @@ export interface ArchaeologyAscensionRequirement {
   ascension: 1 | 2;
   requiredArchaeologyLevel: number;
   requiredHighestStage: number;
+  source: WikiSource;
+}
+
+export interface ArchaeologyUpgrade {
+  id: string;
+  ascension: 0 | 1 | 2;
+  name: string;
+  bonusPerLevel: string;
+  maxLevel: number;
+  stageToUnlock: number | null;
+  costCategory: ArchaeologyUpgradeCostCategory;
+  costLabel: string;
   source: WikiSource;
 }
 
