@@ -9,6 +9,7 @@ export function Navigation() {
       </div>
       <nav className="site-nav" aria-label="Main navigation">
         <NavLink to="/">Home</NavLink>
+        <NavLink to="/export-stats">ExportStats</NavLink>
         <NavLink to="/archaeology">Archaeology</NavLink>
       </nav>
     </header>
