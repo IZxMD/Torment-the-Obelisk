@@ -4,9 +4,11 @@ import { archaeologyBlocks } from '../data/archaeologyBlocks';
 import { archaeologyBossFloors } from '../data/archaeologyBossFloors';
 import { archaeologySkills } from '../data/archaeologySkills';
 import { archaeologySpawnChances } from '../data/archaeologySpawnChances';
-import type { BlockRarity } from '../types';
+import { archaeologyUpgrades } from '../data/archaeologyUpgrades';
+import type { ArchaeologyUpgrade, BlockRarity } from '../types';
 
 const rarityColumns: BlockRarity[] = ['dirt', 'common', 'rare', 'epic', 'legendary', 'mythic', 'divine'];
+const ascensionTiers: ArchaeologyUpgrade['ascension'][] = [0, 1, 2];
 
 const formatChance = (value: number | undefined) => (value === undefined ? '—' : `${value}%`);
 const formatCount = (value: number | undefined) => (value === undefined ? '—' : value);
@@ -17,8 +19,8 @@ export function ArchaeologyPage() {
       <p className="eyebrow">First module</p>
       <h2>Archaeology Sim</h2>
       <p>
-        MVP 0.2 is a validated data viewer. These tables are intentionally still separated
-        from calculation logic so we can verify the source data before building the simulator.
+        MVP 0.3 is still a validated data viewer. It now includes upgrade metadata, while
+        exact upgrade cost formulas remain intentionally separate until we model Costs safely.
       </p>
 
       <section className="content-section">
@@ -95,6 +97,44 @@ export function ArchaeologyPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="content-section">
+        <h3>Upgrades</h3>
+        <p>Cost labels are included. Exact cost curves are intentionally deferred.</p>
+        {ascensionTiers.map((ascension) => {
+          const upgrades = archaeologyUpgrades.filter((upgrade) => upgrade.ascension === ascension);
+
+          return (
+            <div key={ascension} className="table-group">
+              <h4>Ascension {ascension}</h4>
+              <div className="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Upgrade</th>
+                      <th>Bonus per level</th>
+                      <th>Max level</th>
+                      <th>Stage unlock</th>
+                      <th>Cost label</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {upgrades.map((upgrade) => (
+                      <tr key={upgrade.id}>
+                        <td>{upgrade.name}</td>
+                        <td>{upgrade.bonusPerLevel}</td>
+                        <td>{upgrade.maxLevel}</td>
+                        <td>{upgrade.stageToUnlock ?? '—'}</td>
+                        <td>{upgrade.costLabel}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       <section className="content-section">
