@@ -114,16 +114,16 @@ export function StatsInspector() {
           <tbody>
             {filteredStats.map((entry) => (
               <tr key={entry.key}>
-                <td data-label="Stat key">
+                <td>
                   <code>{entry.key}</code>
                 </td>
-                <td data-label="Value">{formatStatValue(entry.value)}</td>
-                <td data-label="Category">
+                <td>{formatStatValue(entry.value)}</td>
+                <td>
                   <span className={`category-pill category-${entry.category.id}`}>
                     {entry.category.label}
                   </span>
                 </td>
-                <td data-label="Priority">{entry.isLikelyImportant ? 'Review soon' : 'Later'}</td>
+                <td>{entry.isLikelyImportant ? 'Review soon' : 'Later'}</td>
               </tr>
             ))}
           </tbody>
