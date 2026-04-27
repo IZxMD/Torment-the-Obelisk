@@ -10,6 +10,7 @@ export function Navigation() {
       <nav className="site-nav" aria-label="Main navigation">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/export-stats">ExportStats</NavLink>
+        <NavLink to="/stats-inspector">Stats Inspector</NavLink>
         <NavLink to="/archaeology">Archaeology</NavLink>
       </nav>
     </header>
