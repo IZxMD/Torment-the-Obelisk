@@ -27,6 +27,25 @@ a {
   color: inherit;
 }
 
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 0.85rem;
+  padding: 0.8rem 1rem;
+  background: #a78bfa;
+  color: #020617;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
 .app-shell {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
@@ -122,6 +141,10 @@ a {
   margin-top: 1.5rem;
 }
 
+.table-group {
+  margin-top: 1rem;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -145,6 +168,72 @@ th {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.json-input {
+  width: 100%;
+  min-height: 260px;
+  resize: vertical;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #020617;
+  color: #e8edff;
+  line-height: 1.45;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.secondary-button {
+  background: #293044;
+  color: #f8fafc;
+}
+
+.message {
+  color: #dce3ff;
+  background: rgba(124, 58, 237, 0.14);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+}
+
+.summary-card {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.summary-card h4 {
+  margin-top: 0;
+}
+
+.summary-card dl {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.summary-card dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.5rem;
+}
+
+.summary-card dt {
+  color: #cbd5e1;
+}
+
+.summary-card dd {
+  margin: 0;
+  font-weight: 800;
 }
 
 @media (max-width: 720px) {
