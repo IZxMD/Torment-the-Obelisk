@@ -2,19 +2,24 @@ export function HomePage() {
   return (
     <section className="page-card">
       <p className="eyebrow">Project start</p>
-      <h2>Browser-based calculators for Idle Obelisk Miner</h2>
+      <h2>ExportStats-first toolkit for Idle Obelisk Miner</h2>
       <p>
-        This app will grow into a multi-page simulator and calculator project. The first
-        module is an updated Archaeology Sim based on source-grounded wiki extraction.
+        Torment the Obelisk is a mobile-first web toolkit that starts from the game's
+        ExportStats JSON. The goal is to turn fragmented calculators and spreadsheets into
+        guided, centralized tools for stats inspection, bomb planning, and progression.
       </p>
       <div className="milestone-grid">
         <article>
           <h3>Current milestone</h3>
-          <p>MVP 0.1: project scaffold, navigation, and placeholder Archaeology module.</p>
+          <p>MVP 0.1: import, validate, persist, and summarize ExportStats JSON.</p>
+        </article>
+        <article>
+          <h3>Next modules</h3>
+          <p>Stats Inspector, Bomb / Transmuter / BoP Lite, then Progression Tracker.</p>
         </article>
         <article>
           <h3>Data workflow</h3>
-          <p>NotebookLM extracts wiki data; TypeScript stores validated app data.</p>
+          <p>Game export data comes first; wiki-derived data is added only where needed.</p>
         </article>
       </div>
     </section>
